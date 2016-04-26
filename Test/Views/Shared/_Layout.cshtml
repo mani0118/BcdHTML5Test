@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>BCD Test - @ViewBag.Title </title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    @RenderSection("script", false)
+    @RenderSection("css", false)
+
+</head>
+<body>
+    <div class="header">
+        <h1>BCD HTML5 TEST</h1>
+    </div>
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿
+@{ Layout = null;}
+<html>
+<head>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta charset="utf-8">
+    <title>BCD酒店预订</title>
+    <meta name="description" content="BCD差旅随行，机票酒店预订">
+    <meta name="keywords" content="机票预订,酒店预订">
+    <meta name="viewport" content="width=320.1,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="apple-mobile-web-app-title" content="差旅随行">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link href="~/Content/Hotel/default.css" rel="stylesheet" />
+</head>
+<body onselectstart="return!1">
+    <div id="headerview" style="height: 2.2rem;">
+        <div class="cm-header">
+
+            <span class="cm-header-icon fl js_back">
+                <i class="icon-back"></i>
+            </span>
+            <h1 class="cm-page-title js_title">
+                酒店
+            </h1>
+        </div>
+    </div>
+
+    <div id="js_style_root"></div>
+    <div id="main" class="hotel-page-height100">
+        <div class="main-frame">
+            <div class="main-viewport">
+                <div>
+                    <article class="m js_index_article">
+                        <p class="inn-bgtop"></p>
+                        <ul class="t g-b">
+                            <li class="">
+                                <p class="g-b g-arr g-mr" id="js_city">
+                                    <em class="g-fn1 g-vb js_city_title">我附近的酒店</em>
+                                </p>
+                            </li>
+                            <li class="g-tab">
+                                <p class="g-b g-arr" id="js_select_date">
+                                    <em class="g-fn1" id="js_cki_date_left">3月30日</em>&nbsp;
+                                    <em class="g-fn3" id="js_cki_date_right">周三</em>
+                                </p>
+                                <p class="g-w"><i id="js_days">1晚</i></p>
+                                <p class="g-b g-t g-arr" id="js_cko_date">
+                                    <em class="g-fn1" id="js_cko_date_left">3月31日</em>
+                                    <em class="g-fn3"><span id="js_cko_date_right">周四</span></em>
+                                </p>
+                            </li>
+                            <li class="g-b g-lc" id="js_morning_wrap" style="display: none;"><em class="g-fn2">到店时间</em><div class="hotel-morning"></div></li>
+                            <li class="g-b lc-itme" style="display: none;"><div class="fr lc-num" id="js_rooms_num"></div><em class="g-fn1">住&nbsp;<em class="js_rooms_num_title">1</em>&nbsp;间</em></li>
+                            <li class="g-b g-arr" id="js_query_kw"><p class="g-fn1 g-e1 g-def-txt" id="js_kw_text_box">关键字/位置/品牌/酒店名</p><span class="g-close js_btn_close" style="display: none;"></span></li>
+                            <li class="g-b g-arr" id="js_query_star_price"><p class="g-fn1 g-e1 g-def-txt js_price_star_label" default-text="价格/星级">价格/星级</p><span class="g-close js_btn_close" style="display: none;"></span></li>
+                            <li class="g-b"><button class="g-btn item" id="js_submit">查询</button></li>
+                        </ul>
+                        <div style="height:1.5rem"></div>
+                    </article>
+
+                </div>
+            </div>
+            <div class="main-state"></div>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+
+
+</body>
+</html>

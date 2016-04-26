@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Test";
+}
+
+@section script{
+    <script src="~/Scripts/mobiscroll.custom-2.17.1.min.js"></script>
+    <script>
+        $(function () {
+            // Mobiscroll Date & Time initialization
+            $('.datetimeDate-demo').mobiscroll().date({
+                theme: 'ios',
+                lang: '',
+                display: 'bottom',
+                mode: 'datetimeDate'
+            });
+
+            $('#datetimeDate-show').click(function () {
+                $('.datetimeDate-demo').mobiscroll('show');
+                return false;
+            });
+
+            $('#datetimeDate-clear').click(function () {
+                $('.datetimeDate-demo').mobiscroll('clear');
+                return false;
+            });
+
+            $('#GotoSegue').click(function () {
+                setupWebViewJavascriptBridge(function (bridge) {
+                    bridge.callHandler('GoSecondView', 'Hello world');
+                    //bridge.registerHandler('echoHandler', function (data, responseCallback) {
+                    //    responseCallback(data)
+                    //})
+                    //bridge.registerHandler('jsRcvResponseTest', function (data, responseCallback) {
+                    //    bridge.callHandler('objcEchoToJs', { foo: 'bar' }, function (response) {
+                    //        if (response && response.foo == 'bar') {
+                    //            responseCallback("Response from JS")
+                    //        } else {
+                    //            responseCallback("Failed")
+                    //        }
+                    //    })
+                    //})
+                })
+            });
+
+
+        });
+    </script>
+
+    <script>
+        function setupWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+            if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+            window.WVJBCallbacks = [callback];
+            var WVJBIframe = document.createElement('iframe');
+            WVJBIframe.style.display = 'none';
+            WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+            document.documentElement.appendChild(WVJBIframe);
+            setTimeout(function () { document.documentElement.removeChild(WVJBIframe) }, 0)
+        }
+    </script>
+
+}
+
+@section css{
+    <link href="~/Content/mobiscroll.custom-2.17.1.min.css" rel="stylesheet" />
+    <link href="~/Content/TestPage.css" rel="stylesheet" />
+}
+
+
+<div id="main">
+    <div>
+        <label for="theme">入住</label>
+        <input class="datetimeDate-demo" placeholder="Please Select ..." />
+    </div>
+</div>
+<div class="demo-wrapper demo-wrapper-datetimeDate">
+
+</div>
+
+<div id="main">
+    <div>
+        <label for="theme">离店</label>
+        <input class="datetimeDate-demo" placeholder="Please Select ..." />
+    </div>
+</div>
+<div class="demo-wrapper demo-wrapper-datetimeDate">
+    <button id="datetimeDate-clear">Clear</button>
+    @*<button id="datetimeDate-show">Show</button>*@
+    <button type="submit" id="submit">Search</button>
+    <button id="GotoSegue">跳转原生界面</button>
+    <a href="@Url.Action("SecondView","Test")">页面内跳转</a>
+</div>
+
+
+
